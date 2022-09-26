@@ -105,7 +105,7 @@ if __name__ == '__main__':
   
     parser.add_argument('--dataset', type=str, default='wisconsin', # for chameleon bigger dataset, we must assign bigger nhid i.e.32
                         help='name of dataset (default: Cora): Cora, Citeseer, Pubmed,Coauthor Physics Coauthor CS Amazon Computer Amazon Photo')
-    # physics exceed colab limit, so change to hpc. 
+   
     parser.add_argument('--reps', type=int, default=12,
                         help='number of repetitions (default: 10)')
     parser.add_argument('--epochs', type=int, default=200,
