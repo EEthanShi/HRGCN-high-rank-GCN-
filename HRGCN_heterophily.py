@@ -187,9 +187,9 @@ adj = np.zeros((num_nodes, num_nodes))
 
 
 
-for n1, n2 in G_orc.edges():   # re-define the ricci curature as k/dij to preserve the sign
+for n1, n2 in G_orc.edges():   # re-define the ricci curature as k/dij or k*dij to preserve the sign
     
-  
+    #adj[n1, n2] = np.exp(-(orc.G[n1][n2]["ricciCurvature"])*(distance.euclidean(features[n1], features[n2])+np.random.uniform(0.1, 10**(-20))/10000))  
     adj[n1, n2] = np.exp(-(orc.G[n1][n2]["ricciCurvature"])/(distance.euclidean(features[n1], features[n2])+np.random.uniform(0.1, 10**(-20))/10000))
     
     adj[n2, n1] = adj[n1, n2]
